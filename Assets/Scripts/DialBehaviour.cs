@@ -4,7 +4,7 @@ public class DialBehaviour : MonoBehaviour
 {
     [SerializeField] private DisplayBehaviour dpBehaviour;
     private float _lastMousePosition;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +22,7 @@ public class DialBehaviour : MonoBehaviour
         {
             dpBehaviour.DecreaseCounter(1);
         }
+        
+        transform.Rotate(new Vector3(transform.rotation.x, transform.rotation.y, -(pos*1.5f)));
     }
 }
