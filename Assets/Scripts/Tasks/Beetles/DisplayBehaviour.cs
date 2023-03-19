@@ -8,6 +8,7 @@ public class DisplayBehaviour : MonoBehaviour
     public Collection collection;
 
     public Canvas canvas;
+    public DontDestroy dontDestroy;
 
     private int _number = 100;
 
@@ -19,9 +20,7 @@ public class DisplayBehaviour : MonoBehaviour
         {
             collection.DeactivateChild();
             collection.counter = 2;
-            collection.ActivateChild();
-            canvas.transform.GetChild(0).gameObject.SetActive(false);
-            canvas.transform.GetChild(1).gameObject.SetActive(true);
+            dontDestroy.dialogCounter++;
         }
     }
 

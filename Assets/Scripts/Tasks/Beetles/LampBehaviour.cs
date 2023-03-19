@@ -8,6 +8,7 @@ public class LampBehaviour : MonoBehaviour
     public Collection collection;
 
     public Canvas canvas;
+    public DontDestroy dontDestroy;
 
     // Update is called once per frame
     void Update()
@@ -16,8 +17,7 @@ public class LampBehaviour : MonoBehaviour
         {
             collection.DeactivateChild();
             collection.counter = 1;
-            collection.ActivateChild();
-            canvas.transform.GetChild(0).gameObject.SetActive(true);
+            dontDestroy.dialogCounter++;
         }
     }
 }

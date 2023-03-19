@@ -46,8 +46,10 @@ public class Dialog : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && dialogBoxContainer.activeSelf)
         {
+            
             dontDestroy.dialogCounter++;
             ToggleDialog();
+            dontDestroy.showDialogue = false;
         }
     }
 }
