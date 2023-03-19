@@ -7,5 +7,6 @@ public class TaskbarHandler : MonoBehaviour
     public void ChangeActiveScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        Debug.Log(sceneName);
     }
 }
