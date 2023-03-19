@@ -10,7 +10,7 @@ public class Collection : MonoBehaviour
 // Start is called before the first frame update
     void Start()
     {
-        ActivateChild();
+        //ActivateChild();
     }
 
     public void ActivateChild()

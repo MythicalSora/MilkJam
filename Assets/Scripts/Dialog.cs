@@ -1,9 +1,6 @@
-using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 
 public class Dialog : MonoBehaviour
 {
@@ -11,7 +8,8 @@ public class Dialog : MonoBehaviour
 
     [SerializeField] public Image avatar;
     [SerializeField] public TextMeshProUGUI dialogBox;
-    [SerializeField] private GameObject dialogBoxContainer; 
+    [SerializeField] public GameObject dialogBoxContainer;
+    public DontDestroy dontDestroy;
     public bool isActive;
 
     public void SetAvatar(string file)
@@ -43,4 +41,13 @@ public class Dialog : MonoBehaviour
     }
 
     private void FixedUpdate() => dialogBoxContainer.SetActive(Instance.isActive);
+
+    public void OnMouseOver(GameObject dBox)
+    {
+        if (Input.GetMouseButtonDown(0) && dialogBoxContainer.activeSelf)
+        {
+            dontDestroy.dialogCounter++;
+            ToggleDialog();
+        }
+    }
 }
