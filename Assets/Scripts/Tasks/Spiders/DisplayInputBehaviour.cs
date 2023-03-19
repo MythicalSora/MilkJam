@@ -16,7 +16,8 @@ public class DisplayInputBehaviour : MonoBehaviour
     private string _input = string.Empty;
     private int[] _numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
     private int _code = 0;
-    
+
+    public DontDestroy dontDestroy;
     public Collection collection;
 
     public Canvas canvas;
@@ -90,8 +91,6 @@ public class DisplayInputBehaviour : MonoBehaviour
             case 3:
                 collection.DeactivateChild();
                 collection.counter = 3;
-                collection.ActivateChild();
-                canvas.transform.GetChild(1).gameObject.SetActive(false);
                 break;
         }
         
@@ -144,6 +143,7 @@ public class DisplayInputBehaviour : MonoBehaviour
                 display.color = Color.green;
                 _code = 2;
                 display.text = null;
+                dontDestroy.dialogCounter++;
             }
             else display.color = Color.red;
         }
@@ -165,6 +165,7 @@ public class DisplayInputBehaviour : MonoBehaviour
             {
                 display.color = Color.green;
                 _code = 3;
+                dontDestroy.dialogCounter++;
             }
             else display.color = Color.red;
         }

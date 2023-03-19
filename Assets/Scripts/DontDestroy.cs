@@ -17,11 +17,6 @@ public class DontDestroy : MonoBehaviour
     {
         DialogCases();
         dialog.OnMouseOver(dialog.dialogBoxContainer);
-        // if ((dialogCounter == 1 || dialogCounter == 3 || dialogCounter == 5) && dialog.dialogBoxContainer.activeSelf == false)
-        // {
-        //     showDialogue = false;
-        // }
-
         _currentScene = SceneManager.GetActiveScene();
     }
     void Awake()
@@ -172,6 +167,50 @@ public class DontDestroy : MonoBehaviour
                     showDialogue = true;
                 }
                 break;
+            case 15:
+                collection.ActivateChild();
+                canvas.transform.GetChild(1).gameObject.SetActive(true);
+                break;
+            case 16:
+                if (dialog != null && dialog.dialogBoxContainer.activeSelf == false && showDialogue==false)
+                {
+                    dialog.dialogBox.color = Color.red;
+                    dialog.ToggleDialog();
+                    dialog.SetDialog("Art/MicIcon",
+                        "Breach detected, 3 Spiders escaped.");
+                    showDialogue = true;
+                }
+                break;
+            case 17:
+                if (dialog != null && dialog.dialogBoxContainer.activeSelf == false && showDialogue==false)
+                {
+                    dialog.dialogBox.color = Color.red;
+                    dialog.ToggleDialog();
+                    dialog.SetDialog("Art/MicIcon",
+                        "The USB Interface of [Peripheral Keyboard #7821] is experiencing slight internal interference, so inputs may be mismatched or may not function properly.");
+                    showDialogue = true;
+                }
+
+                break;
+            case 18:
+                if (dialog != null && dialog.dialogBoxContainer.activeSelf == false && showDialogue==false)
+                {
+                    dialog.dialogBox.color = Color.black;
+                    dialog.ToggleDialog();
+                    dialog.SetDialog("Art/MicIcon",
+                        "Well that doesn’t mean much good… I suggest you turn on the self-repair function. Again, go to the main screen, there LICE the code you need.");
+                }
+                break;
+            case 19:
+                if (dialog != null && dialog.dialogBoxContainer.activeSelf == false && showDialogue==false)
+                {
+                    dialog.dialogBox.color = Color.black;
+                    dialog.ToggleDialog();
+                    dialog.SetDialog("Art/MicIcon",
+                        "You SNAILed it, your keyboard should be working normally now, with an emphasis on should.");
+                }
+                break;
+               
 
 
         }
