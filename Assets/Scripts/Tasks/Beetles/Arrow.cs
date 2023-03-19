@@ -10,12 +10,12 @@ public class Arrow : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            int increment = direction switch
+            float increment = direction switch
             {
-                'l' => -1,
-                'r' => 1,
+                'l' => -0.01f,
+                'r' => 0.01f,
                 _ => 0
             };
 
